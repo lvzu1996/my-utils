@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VoiceAnalyser</title>
+  <script type="text/javascript" src="analyse.js"></script>
+  <style type="text/css">body{display: flex;justify-content: center;}</style>
+</head>
+<body>
+  <input type="file" id="file">
+  <script type="text/javascript">
+    var fileBox = document.getElementById('file');
+    fileBox.onchange = function () {
+        //获取选择文件的数组
+        var fileList = fileBox.files;
+        for (var i = 0; i < fileList.length; i++) {
+            var file = fileList[i];
+            var reader = new FileReader();
+            reader.readAsArrayBuffer(file);
+            reader.onload = function () {
+              var va = new voiceAnalyser()
+              va._initialize(reader.result)
+            };
+        }
+    }
+  </script>    
+</body>
+</html>

@@ -5,7 +5,7 @@
  
  *this is a voice anylyser
  *import {voiceAnalyser} from ''
- *then do voiceAnalyser._start()
+ *then do voiceAnalyser._start(arrayBuffer)
  *data would be loged in console
  
  */

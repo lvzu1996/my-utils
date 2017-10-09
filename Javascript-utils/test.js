@@ -1,4 +1,4 @@
-var {isTel} = require ('./RegExps.js')
+var {isPassword} = require ('./RegExps.js')
 
-console.log(isTel('13777821015'));
+console.log(isPassword('123456789abc'));
 

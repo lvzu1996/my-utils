@@ -3,9 +3,6 @@
  @Update:2017/10/16
  
  *cookie操作工具
- *getCookieArr() 返回一个数组，数组中每个元素是一个长度为2的数组，下标1为key2为value
- *getCookieValue(name)  接收一个cookie的key值，返回对应的value，若未查找到，返回""
- *getCookieMap(name) 接收一个cookie的key值，返回一个key=value的键值对
  */
 
 const strCookie = document.cookie;
@@ -50,8 +47,24 @@ function getCookieMap(name) {
     return "";
 }
 
+//设置cookie  接收key,value,时长
+function setCookie(key, value, days) {  
+    var date = new Date();  
+    date.setTime(date.getTime() + (days*24*60*60*1000));  
+    var expires = "expires="+d.toUTCString();  
+    document.cookie = `${key}=${value}; ${expires}`;  
+}  
+
+//清除cookie 接收key
+function clearCookie(kye) {    
+    setCookie(kye, "", -1);    
+}   
+
+
 module.exports = {
   getCookieArr,
   getCookieValue,
   getCookieMap,
+  setCookie,
+  clearCookie
 }

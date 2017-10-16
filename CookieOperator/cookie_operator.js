@@ -24,24 +24,24 @@ function getCookieArr() {
 }
 
 //接收一个cookie的key值，返回对应的value，若未查找到，返回""
-function getCookieValue(name) {
+function getCookieValue(key) {
     var strCookie = document.cookie;
     var arrCookie = strCookie.split("; ");
     for (var i = 0; i < arrCookie.length; i++) {
         var arr = arrCookie[i].split("=");
-        if (arr[0] == name)
+        if (arr[0] == key)
             return arr[1];
     }
     return "";
 }
 
 //接收一个cookie的key值，返回一个key=value的键值对
-function getCookieMap(name) {
+function getCookieMap(key) {
     var strCookie = document.cookie;
     var arrCookie = strCookie.split("; ");
     for (var i = 0; i < arrCookie.length; i++) {
         var arr = arrCookie[i].split("=");
-        if (arr[0] == name)
+        if (arr[0] == key)
             return arr.join('=');
     }
     return "";

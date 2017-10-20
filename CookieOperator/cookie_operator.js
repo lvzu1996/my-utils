@@ -47,12 +47,12 @@ function getCookieMap(key) {
     return "";
 }
 
-//设置cookie  接收key,value,时长
-function setCookie(key, value, days) {  
-    var date = new Date();  
-    date.setTime(date.getTime() + (days*24*60*60*1000));  
-    var expires = "expires="+d.toUTCString();  
-    document.cookie = `${key}=${value}; ${expires}`;  
+//设置cookie  接收key,value,到期时间
+function setCookie(key, value, date) {  
+    // date.setTime(date.getTime() + (days*24*60*60*1000));  
+    var expires = "expires="+date.toGMTString(); 
+    document.cookie = `${key}=${value};${expires}`;  
+    console.log(`${key}=${value};${expires}`);
 }  
 
 //清除cookie 接收key

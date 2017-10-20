@@ -1,3 +1,3 @@
-var {isPassword} = require ('./info_validater.js')
+var {decCal} = require('./decimal_calculation')
 
-console.log(isPassword('123456789abc'));
+console.log(decCal(0.8,0.6,1));

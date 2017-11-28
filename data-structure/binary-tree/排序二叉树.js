@@ -129,11 +129,11 @@ BinaryTree.prototype = {
                 var delNode = fatherNode.left;
                 var flag = false;
                 //如果被删除的节点没有左右子节点
-                delNode.left == null && delNode.right == null && (fatherNode.left = null) && (flag = true);
+                delNode.left == null && delNode.right == null && (fatherNode.left = null,flag = true);
                 //被删除的节点只有右节点
-                delNode.left == null && delNode.right != null && (fatherNode.left = delNode.right) && (flag = true);
+                delNode.left == null && delNode.right != null && (fatherNode.left = delNode.right,flag = true);
                 //被删除的节点只有左节点
-                delNode.left != null && delNode.right == null && (fatherNode.left = delNode.left) && (flag = true);
+                delNode.left != null && delNode.right == null && (fatherNode.left = delNode.left,flag = true);
 
                 //被删除的节点同时有左右节点
                 if(!flag){
@@ -150,15 +150,11 @@ BinaryTree.prototype = {
                 var delNode = fatherNode.right;
                 var flag = false;
                 //如果被删除的节点没有左右子节点
-                if(delNode.left == null && delNode.right == null){
-                    fatherNode.right = null;
-                    flag = true;
-                }
-                // delNode.left == null && delNode.right == null && (fatherNode.right = null) && (flag = true);
+                delNode.left == null && delNode.right == null && (fatherNode.right = null,flag = true);
                 //被删除的节点只有右节点
-                delNode.left == null && delNode.right != null && (fatherNode.right = delNode.right) && (flag = true);
+                delNode.left == null && delNode.right != null && (fatherNode.right = delNode.right,flag = true);
                 //被删除的节点只有左节点
-                delNode.left != null && delNode.right == null && (fatherNode.right = delNode.left) && (flag = true);
+                delNode.left != null && delNode.right == null && (fatherNode.right = delNode.left,flag = true);
 
                 //被删除的节点同时有左右节点
                 if(!flag){
